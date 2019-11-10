@@ -60,3 +60,14 @@ samtoolsing:
     0 + 0 with mate mapped to a different chr
     0 + 0 with mate mapped to a different chr (mapQ>=5)
 
+Sort and index BAM file
+
+    $ samtools sort alignment.bam -o alignment_sorted.bam
+    $ samtools index alignment_sorted.bam
+
+Variant calling    
+
+    $ samtools mpileup -f ecoli.fna alignment_sorted.bam >  my.mpileup
+    $ java -jar ../VarScan.v2.4.4.jar  mpileup2snp my.mpileup --min-var-freq 0.01 --variants --output-vcf 1 > VarScan_results_0.01.vcf
+    $ java -jar ../VarScan.v2.4.4.jar  mpileup2snp my.mpileup --min-var-freq 0.05 --variants --output-vcf 1 > VarScan_results_0.05.vcf
+    $ java -jar ../VarScan.v2.4.4.jar  mpileup2snp my.mpileup --min-var-freq 0.10 --variants --output-vcf 1 > VarScan_results_0.10.vcf
