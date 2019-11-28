@@ -73,4 +73,4 @@ Sort and index BAM file
 
 Variant calling    
 
-    $  samtools mpileup -f roommate.fastq roommate_indexed.bam -o roommate.mpileup
+    $ samtools mpileup -f reference.fasta roommate_indexed.bam -o roommate.mpileup 
