@@ -96,7 +96,9 @@ id - is index pos is in `roommate_0.001.csv`.
     20      1458    T        C       0.84%
     
 Creating python script for finding PCR errors `data/pcr_errors.py`
-(just find position all 3 files have SNP)
+(just find position all 3 files have SNP).
+
+Note: they all have repeated pattern: T -> C, A -> G
 
     position base alt_base  frequency
       165    T        C       0.24%
