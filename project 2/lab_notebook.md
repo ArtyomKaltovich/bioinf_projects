@@ -73,4 +73,25 @@ Sort and index BAM file
 
 Variant calling    
 
-    $ samtools mpileup -f reference.fasta roommate_indexed.bam -o roommate.mpileup 
+    $ samtools mpileup -d 100000 -f reference.fasta roommate_indexed.bam -o roommate.mpileup
+    $ java -jar ../../VarScan.v2.4.4.jar mpileup2snp roommate.mpileup --min-var-freq 0.95 --variants --output-vcf 1 > roommate.vcf
+    $ cat roommate.vcf | awk 'FNR==1{print "position,base,alt_base,frequency";next} NR>24 {split($10,a,":"); print $2, $4, $5, a[7]}' OFS=, > roommate.csv
+    $ java -jar ../../VarScan.v2.4.4.jar mpileup2snp roommate.mpileup --min-var-freq 0.001 --variants --output-vcf 1 > roommate_0.001.vcf
+    $ cat roommate_0.001.vcf | awk 'FNR==1{print "position,base,alt_base,frequency";next} NR>24 {split($10,a,":"); print $2, $4, $5, a[7]}' OFS=, > roommate_0.001.csv
+    
+#28.11.2019 - sequencing error
+
+Creating sh script for alignning `data/align.sh`
+
+Creating python script for rare SNP filtering `data/mead_and_std.py`.
+id - is index pos is in `roommate_0.001.csv`
+
+    id   position base alt_base  frequency
+    0         72    A        G      99.96
+    1        117    C        T      99.82
+    4        307    C        T       0.94
+    10       774    T        C      99.96
+    14       999    C        T      99.86
+    18      1260    A        C      99.94
+    20      1458    T        C       0.84
+
