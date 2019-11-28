@@ -84,14 +84,51 @@ Variant calling
 Creating sh script for alignning `data/align.sh`
 
 Creating python script for rare SNP filtering `data/mead_and_std.py`.
-id - is index pos is in `roommate_0.001.csv`
+id - is index pos is in `roommate_0.001.csv`.
 
     id   position base alt_base  frequency
-    0         72    A        G      99.96
-    1        117    C        T      99.82
-    4        307    C        T       0.94
-    10       774    T        C      99.96
-    14       999    C        T      99.86
-    18      1260    A        C      99.94
-    20      1458    T        C       0.84
+    0         72    A        G      99.96%
+    1        117    C        T      99.82%  - Epitope D
+    4        307    C        T       0.94%  - Epitope C
+    10       774    T        C      99.96%
+    14       999    C        T      99.86%
+    18      1260    A        C      99.94%
+    20      1458    T        C       0.84%
+    
+Creating python script for finding PCR errors `data/pcr_errors.py`
+(just find position all 3 files have SNP)
 
+    position base alt_base  frequency
+      165    T        C       0.24%
+      183    A        G       0.30%
+      216    A        G       0.22%
+      218    A        G       0.28%
+      222    T        C       0.26%
+      254    A        G       0.25%
+      276    A        G       0.22%
+      340    T        C       0.23%
+      356    A        G       0.22%
+      370    A        G       0.21%
+      409    T        C       0.22%
+      414    T        C       0.28%
+      421    A        G       0.18%
+      463    A        G       0.19%
+      660    A        G       0.20%
+      670    A        G       0.29%
+      691    A        G       0.23%
+      722    A        G       0.23%
+      744    A        G       0.21%
+      859    A        G       0.27%
+      915    T        C       0.26%
+      987    A        G       0.22%
+     1031    A        G       0.28%
+     1056    T        C       0.20%
+     1086    A        G       0.33%
+     1213    A        G       0.24%
+     1264    T        C       0.26%
+     1280    T        C       0.25%
+     1358    A        G       0.26%
+     1398    T        C       0.20%
+     1421    A        G       0.31%
+     1460    A        G       0.34%
+     1482    A        G       0.24%
