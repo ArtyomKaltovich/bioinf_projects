@@ -129,3 +129,13 @@ Note: they all have repeated pattern: T -> C, A -> G
      1421    A        G       0.31%
      1460    A        G       0.34%
      1482    A        G       0.24%
+
+28.11.2019 - Getting max depth
+
+    $ samtools depth -d 10000000 roommate_indexed.bam | sort --key=3 -n | tail -n 1
+    KF848938.1	801	44522
+
+where:
+ * KF848938.1 is id 
+ * 801 - is position
+ * 44522 - depth
