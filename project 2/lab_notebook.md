@@ -136,6 +136,53 @@ Note: they all have repeated pattern: T -> C, A -> G
     KF848938.1	801	44522
 
 where:
- * KF848938.1 is id 
- * 801 - is position
- * 44522 - depth
+* KF848938.1 is id 
+* 801 - is position
+* 44522 - depth
+
+
+    $ samtools flagstat SRR1705858.fastq.gz.bam   
+    256744 + 0 in total (QC-passed reads + QC-failed reads)
+    0 + 0 secondary
+    158 + 0 supplementary
+    0 + 0 duplicates
+    256658 + 0 mapped (99.97% : N/A)
+    0 + 0 paired in sequencing
+    0 + 0 read1
+    0 + 0 read2
+    0 + 0 properly paired (N/A : N/A)
+    0 + 0 with itself and mate mapped
+    0 + 0 singletons (N/A : N/A)
+    0 + 0 with mate mapped to a different chr
+    0 + 0 with mate mapped to a different chr (mapQ>=5)
+    
+    $ samtools flagstat SRR1705859.fastq.gz.bam   
+    233451 + 0 in total (QC-passed reads + QC-failed reads)
+    0 + 0 secondary
+    124 + 0 supplementary
+    0 + 0 duplicates
+    233375 + 0 mapped (99.97% : N/A)
+    0 + 0 paired in sequencing
+    0 + 0 read1
+    0 + 0 read2
+    0 + 0 properly paired (N/A : N/A)
+    0 + 0 with itself and mate mapped
+    0 + 0 singletons (N/A : N/A)
+    0 + 0 with mate mapped to a different chr
+    0 + 0 with mate mapped to a different chr (mapQ>=5)
+    
+    $ samtools flagstat SRR1705860.fastq.gz.bam   
+    250184 + 0 in total (QC-passed reads + QC-failed reads)
+    0 + 0 secondary
+    220 + 0 supplementary
+    0 + 0 duplicates
+    250108 + 0 mapped (99.97% : N/A)
+    0 + 0 paired in sequencing
+    0 + 0 read1
+    0 + 0 read2
+    0 + 0 properly paired (N/A : N/A)
+    0 + 0 with itself and mate mapped
+    0 + 0 singletons (N/A : N/A)
+    0 + 0 with mate mapped to a different chr
+    0 + 0 with mate mapped to a different chr (mapQ>=5)
+      
