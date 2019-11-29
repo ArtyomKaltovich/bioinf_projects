@@ -141,7 +141,7 @@ where:
 * 44522 - depth
 
 ```bash
-$ samtools flagstat SRR1705858.fastq.gz.bam   
+    $ samtools flagstat SRR1705858.fastq.gz.bam   
     256744 + 0 in total (QC-passed reads + QC-failed reads)
     0 + 0 secondary
     158 + 0 supplementary
