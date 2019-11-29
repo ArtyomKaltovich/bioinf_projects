@@ -42,10 +42,6 @@ This is ok for deep sequencing.
 
 Number of mapped reads:
 
-    $ samtools view roommate.bam -c
-
-361349 of 358265 were mapped.
-
     $ samtools flagstat roommate.bam   
 
     361349 + 0 in total (QC-passed reads + QC-failed reads)
@@ -67,9 +63,8 @@ list of non unique read was constacted and saved to data\non_unique_reads.txt
     $ samtools view roommate.bam | awk '{print $1}' | sort | uniq -d > non_unique_reads.txt
     
 Sort and index BAM file
-
-    $ samtools sort roommate.bam -o roommate_indexed.bam 
-    $ samtools index roommate_indexed.bam 
+ 
+    $ samtools index roommate.bam -roommate_indexed.bam 
 
 Variant calling    
 
