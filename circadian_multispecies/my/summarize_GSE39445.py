@@ -2,23 +2,25 @@ import os
 import re
 import csv
 import requests
+import itertools
 
 import pandas as pd
 
 CIRCADIAN_GENES = "ARNTL", "NR1D1", "PER3"
-FIELDS = ("sample_id", "sleepprotocol", "hoursawake", "circadianphase") + CIRCADIAN_GENES
+HOUSEKEEPING_GENES = "ATF1", "PUF60", "EIF3M"
+FIELDS = ("sample_id", "sleepprotocol", "hoursawake", "circadianphase") + CIRCADIAN_GENES + HOUSEKEEPING_GENES
 
 
 def main():
     with open("data/GSE39445.csv", "w") as result:
         result = csv.DictWriter(result, FIELDS)
         result.writeheader()
-        dir = r"/run/media/my/New Volume/temp/GSE39445_RAW/"
+        dir = r"/run/media/my/New Volume1/temp/GSE39445_RAW/"
         os.chdir(dir)
         files = os.listdir(dir)
         files.sort()
         characteristics = re.compile(r'<tr valign="top"><td nowrap>Characteristics</td>(.*\n.*\n.*)</tr>')
-        #files = files[:13]
+        #files = files[9:13]
         n = len(files)
         for i, f in enumerate(files, 1):
             fields = get_metadata(characteristics, f)
@@ -43,7 +45,8 @@ def get_metadata(characteristics, f):
 
 def read_expressions(path):
     data = pd.read_csv(path, skiprows=9, sep="\t")
-    return {gene: data[data["GeneName"] == gene]["gMedianSignal"].sum() for gene in CIRCADIAN_GENES}
+    return {gene: data[data["GeneName"] == gene]["gMedianSignal"].sum()
+            for gene in itertools.chain(CIRCADIAN_GENES, HOUSEKEEPING_GENES)}
 
 
 if __name__ == '__main__':
