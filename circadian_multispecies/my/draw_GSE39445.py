@@ -12,5 +12,5 @@ extension = data[data["sleepprotocol"] == "Sleep Extension"]
 restriction = data[data["sleepprotocol"] == "Sleep Restriction"]
 fig, ax = plt.subplots(1, 3)
 for i, gene in enumerate(CIRCADIAN_GENES):
-    sns.regplot("circadianphase", gene, data=restriction, x_estimator=np.mean, order=3, ax=ax[i])
+    sns.regplot("circadianphase", gene, data=extension, x_estimator=np.mean, order=3, ax=ax[i])
 plt.show()
