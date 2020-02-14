@@ -10,3 +10,7 @@ extraction for plot instead of absolute.
 
 # 05.02.2020
 - download raw data of GSE71620 
+
+# 14.02.2020
+- download metadata GSE71620
+- plot GSE71620 
