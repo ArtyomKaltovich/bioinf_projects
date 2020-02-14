@@ -13,4 +13,7 @@ extraction for plot instead of absolute.
 
 # 14.02.2020
 - download metadata GSE71620
-- plot GSE71620 
+- plot GSE71620
+- download GSE10045 - rejected as no brain\blood data
+- download GSE54650 using join_metadata_GSE54650.py and based on script for GSE71620
+- plot GSE54650 based on script for GSE71620
