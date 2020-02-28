@@ -220,7 +220,13 @@ We searched our protein sequences against a collection of profile-HMMs for diffe
 output:
  https://www.ebi.ac.uk/Tools/hmmer/results/90350804-59A2-11EA-899E-10AFF75AEC3D/score
 
+9. Integrate your various pieces of evidence
+
 - create the script for parse wolfpsort output - parse_wolfpsort.py
 - put its output to data/details_urls.csv
 - create the script for parse hmmer output - parse_hmmer.py
 - put its output to data/hmmer_data.csv
+- create the script for selecting best blast result - parse_blast.py
+- put its output to data/best_blast.csv
+- create the script for joining - joining.py
+- put its output to data/result.csv

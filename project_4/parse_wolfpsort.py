@@ -30,4 +30,5 @@ if __name__ == '__main__':
             row = [id_, link]
             row.extend(max_elem)
             row[5] = r'https://wolfpsort.hgc.jp/results/' + row[5]
+            row[-1] = row[-1].replace(",", "\,")
             file.write(','.join(row) + '\n')
