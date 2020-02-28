@@ -111,3 +111,5 @@ fails with
 
 - create the script for parse wolfpsort output - parse_wolfpsort.py
 - put its output to data/details_urls.csv
+- create the script for parse hmmer output - parse_hmmer.py
+- put its output to data/hmmer_data.csv
