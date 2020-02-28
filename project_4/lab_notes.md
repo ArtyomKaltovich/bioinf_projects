@@ -30,7 +30,7 @@ ctrl+alt+f1 doesn't work as expected in arch linux.
 
 That's all, folks!
 
-* 24.02.2020 - still trying to install repeatmodeler
+* 25.02.2020 - still trying to install repeatmodeler
  
 - removing python-conda and install miniconda3 it fails with
         
@@ -84,9 +84,14 @@ fails with
      
         ERROR: Could not find a version that satisfies the requirement urllib3D (from versions: none)
         ERROR: No matching distribution found for urllib3D
-    
+       
+* 26.02.2020 - still trying to install repeatmodeler
+
 - trying on virtual machines - both failed
 - trying to install directly by unpacking tar archive from official site - failed as no perl packages
+
+* 27.02.2020 - still trying to install repeatmodeler
+
 - cpan failed to install them    
 - installing with pacman
 - repeatmodeler needs repeatmasker
@@ -101,3 +106,8 @@ fails with
     ==> ERROR: A failure occurred in package()
 
 - editing pkgbuild - installation stuck
+
+* 28.02.2020
+
+- create the script for parse wolfpsort output - parse_wolfpsort.py
+- put its output to data/details_urls.csv
