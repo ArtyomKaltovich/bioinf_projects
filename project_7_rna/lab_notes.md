@@ -25,10 +25,8 @@
 
     $ ~/bin/gffread-0.11.8.Linux_x86_64/gffread genes.gff.gz -T -o genes.gtf
     Warning: invalid start coordinate at line:
-    ��I�i�a��;�j%�x�ozi�<�X|�.!�>\�4��7�j���������e%5e      U
-                                                             74:�4N�r���i�U�� ��Q�pF�:�z��H�3�Ωr��
-                                                                                                  �_8��┬�����≠�┤��/����⎻�JH�8���─䔄$I���$$�W≥��B���ݜ� └J    �Q      Z�'�H␌$Q���Ԅ#D%ܐL�����±��┼±-2��?���␉�T�,�힓^└   ���V└   ��┴�    ޓJ����E^N�      ┬HL����A�≤��␉┬┬-(F���d�&d�Ħ/������c�%&�o���o���+t:oo!�Y�kP��~+�jJ(��UŘ������k9�']1��\ވ��54�
-
+    ��I�i�a��;�j%�x�ozi�<�X|�.!�>\�4��7�j���������e%5e 
+    
 - unpacking gz archive to genes.gff
     
     
@@ -42,6 +40,16 @@
 - count
 
 
-    $ kb count -i transcriptome.idx -g transcripts_to_genes.txt -x 10xv2 --h5ad --loom -t 4 fermentation_0_replicate_1.fastq.gz fermentation_0_replicate_2.fastq.gz -o fermentation_0
-    $ kb count -i transcriptome.idx -g transcripts_to_genes.txt -x 10xv2 --h5ad --loom -t 4 fermentation_30_replicate_1.fastq.gz fermentation_30_replicate_2.fastq.gz -o fermentation_30
+    $ kb count -i transcriptome.idx -g transcripts_to_genes.txt -x 10xv2 --h5ad -t 4 fermentation_0_replicate_1.fastq.gz fermentation_0_replicate_2.fastq.gz -o fermentation_0
     
+    $ kb count -i transcriptome.idx -g transcripts_to_genes.txt -x 10xv2 --h5ad -t 4 fermentation_30_replicate_1.fastq.gz fermentation_30_replicate_2.fastq.gz -o fermentation_30
+    
+- install packages for analysis
+
+
+    $ pip install leidenalg scanpy MulticoreTSNE 
+    Error: Cannot find cmake. Install cmake, e.g. `pip install cmake`.
+
+    $ pip install cmake leidenalg scanpy MulticoreTSNE 
+    
+- kalisto generated files with no columns - switch to another approach
