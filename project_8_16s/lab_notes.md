@@ -131,3 +131,32 @@ Result of filter:
 
     ~/bin/MetaPhlAn/utils/metaphlan_hclust_heatmap.py  --in merge_output.txt --out heatmap.png -s log --top 50
     error occures, have to fix code - after it heatmap was created
+    
+
+- download T. forsythia strain
+- align
+
+
+    $ bwa index T_forsythia_genomic.fna.gz
+    $ bwa mem T_forsythia_genomic.fna.gz G12_assembly.fna.gz > alignment.sam
+    $ samtools view -S -b alignment.sam > alignment.bam
+    $ samtools flagstat alignment.bam
+    905742 + 0 in total (QC-passed reads + QC-failed reads)
+    0 + 0 duplicates
+    16539 + 0 mapped (1.83%:-nan%)
+    0 + 0 paired in sequencing
+    0 + 0 read1
+    0 + 0 read2
+    0 + 0 properly paired (-nan%:-nan%)
+    0 + 0 with itself and mate mapped
+    0 + 0 singletons (-nan%:-nan%)
+    0 + 0 with mate mapped to a different chr
+    0 + 0 with mate mapped to a different chr (mapQ>=5)
+
+    $ ~/bin/bedtools bamtobed -i alignment.bam > bed.bed
+
+- intersected
+
+
+    $ ~/bin/bedtools intersect -a bed.bed -b T_forsythia_genomic.gff.gz -v > intersected
+    
