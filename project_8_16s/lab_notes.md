@@ -160,3 +160,13 @@ Result of filter:
 
     $ ~/bin/bedtools intersect -a bed.bed -b T_forsythia_genomic.gff.gz -v > intersected
     
+- create script for plot
+
+
+    $ python plot_bars.py
+
+- recreate heatmap
+
+
+    $ ~/bin/MetaPhlAn/utils/merge_metaphlan_tables.py *.fasta_profile.txt > merge_output.txt
+    $ ~/bin/MetaPhlAn/utils/metaphlan_hclust_heatmap.py  --in merge_output.txt --out ../plot/heatmap.png -s log --top 50
