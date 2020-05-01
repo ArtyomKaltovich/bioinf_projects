@@ -16,7 +16,7 @@ def main(path):
             sns.barplot(xs, ys)
             plt.xlabel("Taxa")
             plt.ylabel("Percent")
-            plt.xticks(rotation=90)
+            plt.xticks(rotation=90, size=6)
             plt.tight_layout()
             plt.savefig(f"plot/taxa_bar_level_{i}.png")
             plt.clf()
