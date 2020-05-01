@@ -170,3 +170,10 @@ Result of filter:
 
     $ ~/bin/MetaPhlAn/utils/merge_metaphlan_tables.py *.fasta_profile.txt > merge_output.txt
     $ ~/bin/MetaPhlAn/utils/metaphlan_hclust_heatmap.py  --in merge_output.txt --out ../plot/heatmap.png -s log --top 50
+
+
+- recreate heatmap and ones more :)
+
+
+    $ ~/bin/MetaPhlAn/utils/merge_metaphlan_tables.py *.fasta_profile.txt output.txt > merge_output.txt
+    $ ~/bin/MetaPhlAn/utils/metaphlan_hclust_heatmap.py  --in merge_output.txt --out ../plot/heatmap.png -s log --top 50
